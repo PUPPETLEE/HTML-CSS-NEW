@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <button class="js-start" onclick="timeoutFinished();">
+      Start
+    </button>
+
+  </head>
+  <body>
+    
+    <script>
+     let startBtnElement =  document.querySelector('.js-start');
+
+     function timeoutFinished(){
+      if(startBtnElement.innerHTML === 'Start'){
+        startBtnElement.innerHTML = 'Loading!'
+      setTimeout(()=>{
+         startBtnElement.innerHTML = "Finished!";
+      },1000);
+     }else{
+      startBtnElement.innerHTML = 'Start';
+     }
+     }
+   
+    
+    
+
+    </script>
+  </body>
+</html>

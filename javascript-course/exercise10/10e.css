@@ -1,0 +1,12 @@
+.gaming-button, .music-button, .tech-button{
+  border: none;
+  color: white;
+  font-size: 16px;
+  background-color: black;
+  padding: 15px 25px;
+  border-radius: 5px;
+}
+.toggle-button{
+  background-color: rgb(235, 227, 227);
+  color: black;
+}

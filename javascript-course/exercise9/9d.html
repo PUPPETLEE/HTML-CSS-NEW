@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 9a</title>
+  </head>
+  <body>
+   <input  class="js-input" placeholder="name">
+   <button onclick="
+    let name = document.querySelector('.js-input').value;
+   submitName(name)">
+    Submit
+   </button>
+   <p class="js-name"></p>
+
+   </p>
+    <script>
+
+      function submitName(name){
+        
+        document.querySelector('.js-name').innerHTML = `Hello ${name}`;
+      }
+      
+
+    </script>
+  </body>
+</html>

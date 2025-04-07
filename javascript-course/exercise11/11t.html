@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    
+    <script>
+
+            removEgg(['egg','apple','egg','egg','ham']);
+     
+            function removEgg(foods){
+            let result = [];
+            let eggCount = 0;
+            for(let i = 0; i < foods.length; i++){
+              if(foods[i] === 'egg' && eggCount < 1){
+              eggCount++;
+              result.push(foods[i]);
+              } else if (foods[i] !== 'egg') {
+              result.push(foods[i]);
+              }
+            }
+            return console.log(result);
+            }
+
+
+  
+
+  
+    </script>
+  </body>
+</html>

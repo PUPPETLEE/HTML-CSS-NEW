@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .gaming-button, .music-button, .tech-button{
+        border: none;
+        color: white;
+        font-size: 16px;
+        background-color: black;
+        padding: 15px 25px;
+        border-radius: 5px;
+      }
+      .toggle-button{
+        background-color: rgb(235, 227, 227);
+        color: black;
+      }
+    
+    </style>
+
+  </head>
+
+  <body>
+    <button class="gaming-button" onclick="toggled('gaming');">
+      Gaming
+    </button>
+
+    <button class="music-button" onclick="toggled('music')">
+      Music
+    </button>
+    <button class="tech-button" onclick="toggled('tech')">
+      Tech
+    </button>
+    
+    <script>
+
+      function toggled(btn){
+        // Store the button element in a variable to make the code cleaner
+        const buttonElement = document.querySelector(`.${btn}-button`);
+
+        // Check if the button already has the toggle-button class
+        if (buttonElement.classList.contains('toggle-button')) {
+          buttonElement.classList.remove('toggle-button');
+        } else {
+          // Remove the toggle-button class from any previously toggled button
+          const previousButton = document.querySelector('.toggle-button');
+          if (previousButton) {
+            previousButton.classList.remove('toggle-button');
+          }
+          // Add the toggle-button class to the clicked button
+          buttonElement.classList.add('toggle-button');
+        }
+      
+      }
+
+    </script>
+  </body>
+</html>

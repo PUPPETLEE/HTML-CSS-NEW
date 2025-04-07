@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+
+    <button onclick="playerMove('heads')">
+       head
+    </button>
+    <button onclick="playerMove('tails')">
+        tails
+    </button>
+
+    <script>
+
+
+
+
+      const score = JSON.parse(localStorage.getItem('score')) || {
+        wins: 0,
+        losses: 0
+      };
+
+      function playerMove(move){  
+
+        const randomNumber = Math.random();
+        const result = randomNumber < 0.5 ? 'heads' : 'tails';
+
+        const guess = move;
+       
+          if(guess === result){
+            score.wins++ ;
+          }
+          else {
+            score.losses++;
+          }
+
+
+        //for creating a local storage  and saving 
+         localStorage.setItem('score',JSON.stringify(score)); 
+
+         console.log(`Wins: ${score.wins} Losses: ${score.losses}`);
+
+      };
+      
+    </script>
+  </body>
+</html>

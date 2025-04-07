@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<head>
+
+</head>
+<body>
+
+  <script>
+
+ console.log(removeEgg(['egg','apple','egg','egg','ham']));
+
+function removeEgg(foods){
+
+ let eggCount = 0;
+ return foods.filter((value,index)=>{
+
+    if(value === 'egg' && eggCount !== 2){
+      eggCount +=1;
+      return false;
+    }else{
+      console.log(eggCount);
+      return true;
+    }
+
+  })
+ 
+
+}
+
+
+    
+
+  </script>
+  
+</body>
+</html>

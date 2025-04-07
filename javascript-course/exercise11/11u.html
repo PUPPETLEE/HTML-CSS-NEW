@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    
+    <script>
+
+            
+            const foods = ['egg','apple','egg','egg','ham'];
+        
+            removEgg(foods);
+            console.log(foods)
+            
+     
+            function removEgg(foods){
+
+            const foodcopy = foods.slice();
+
+            let result = [];
+            let eggCount = 0;
+            for(let i = 0; i < foodcopy.length; i++){
+              if(foodcopy[i] === 'egg' && eggCount < 1){
+              eggCount++;
+              result.push(foods[i]);
+              } else if (foodcopy[i] !== 'egg') {
+              result.push(foodcopy[i]);
+              }
+            }
+            return console.log(result);
+            }
+
+
+  
+
+  
+    </script>
+  </body>
+</html>

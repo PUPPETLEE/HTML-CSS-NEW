@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    
+    <script>
+           console.log(arraySwap([10,20,30]));
+
+
+      function arraySwap(array){
+        newarray = [];
+        <!-- 
+          This code snippet reverses the elements of an array.
+          It iterates through the original array from the last element to the first element.
+          For each iteration, it pushes the current element into a new array.
+          Finally, it returns the new array which contains the elements in reverse order.
+        -->
+
+        for(let i = array.length-1; i>=0; i--){
+            newarray.push(array[i]);
+          
+        }
+        return newarray;
+      }
+        
+
+    </script>
+  </body>
+</html>

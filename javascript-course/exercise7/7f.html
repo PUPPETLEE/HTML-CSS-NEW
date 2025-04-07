@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    
+    <script>
+      converTemperature(25,"c");
+      converTemperature(86,'f')
+      function converTemperature(degrees, unit){
+        let result = 0;
+        if(unit === "c"){
+           result = (degrees * 9 / 5) + 32;
+        }else if(unit === "f"){
+           result = (degrees - 32 ) * 5 / 9;
+        }
+
+        return console.log(`${result}${unit}`);
+      }
+
+    </script>
+
+  </body>
+  
+</html>

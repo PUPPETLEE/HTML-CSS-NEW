@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+  </head>
+   <body> 
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button" onclick="subscribe();">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40 = + $10 shipping.</p>
+    <p>Orders over $40 = FREE shipping</p>
+    <input class="js-order-amount" placeholder="Enter order amount" onkeydown="handleCostdown(event);">
+    
+    <button onclick="calculateTotalShipping(parseInt(document.querySelector('.js-order-amount').value));">Calculate</button>
+    <p class="js-total-amount"></p>
+
+    <script>
+
+       
+      function handleCostdown(event){
+        if (event.key === 'Enter'){
+      calculateTotalShipping(parseInt(document.querySelector('.js-order-amount').value));
+       }
+      }
+
+      function subscribe(){
+
+        let buttonElement = document.querySelector('.js-subscribe-button').
+        //we use innerText to get the text inside the button it doest not include spaces
+
+        innerText;
+
+        if(buttonElement === 'Subscribe'){
+          document.querySelector('.js-subscribe-button').innerHTML = 'Subscribed';
+        }
+        else{
+          document.querySelector('.js-subscribe-button').innerHTML = 'Subscribe';
+        }
+      }
+
+      
+      
+
+      function calculateTotalShipping(orderAmount){
+        // u need to convert the orderamount to int u can use parseint or Number
+        if(orderAmount < 40 ){
+          document.querySelector('.js-total-amount').innerHTML = `${orderAmount+=10}`;
+        }else{
+          document.querySelector('.js-total-amount').innerHTML = `${orderAmount}`;
+        }
+
+      }
+      
+    </script>
+   </body>
+
+</html>

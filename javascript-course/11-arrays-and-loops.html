@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Arrays and Loops</title>
+  </head>
+  <body>
+
+    <script>
+      let fruits = ['apple', 'banana', 'orange', 'strawberry', 'kiwi'];
+
+      fruits.push('grapes');
+      
+
+      console.log(fruits)
+
+      fruits[0] = 'pear';
+
+
+      fruits.pop('grapes');
+
+      console.log(fruits)
+
+      <!-- Removes the first element from the fruits array -->
+      fruits.splice(0, 1);
+
+      console.log(fruits)
+
+
+    
+    const numbers =[1,2,3,4,5,6,7,8,9,10];
+
+    for(let number of numbers){
+      console.log(number);  
+    };
+
+    for(let i = 0; i < numbers.length; i++){
+      console.log(i);
+    }
+    let doubledNumbers = [];
+
+    for(i=0; i<numbers.length; i++){
+      doubledNumbers.push(numbers[i] * 2);
+    }
+    console.log(doubledNumbers);
+
+
+
+
+
+
+
+    
+    </script>
+    
+    
+  </body>
+</html>

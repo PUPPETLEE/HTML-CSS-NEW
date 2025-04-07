@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    
+    <script>
+  
+  
+ console.log( minMax([1,-3,4]));
+
+  function minMax(array){
+   
+    const result={
+      min: null,
+      max: null
+    }
+
+    <!--
+    This code iterates through an array starting from the second element (index 1).
+    It compares each element with the current minimum and maximum values.
+    If an element is smaller than the current minimum, it updates the minimum.
+    If an element is larger than the current maximum, it updates the maximum.
+    -->
+
+    for(let i = 1; i < array.length; i++){
+      if(array[i] < result.min || result.min === null){
+        result.min = array[i];
+      }
+      min = array[i];
+      }
+      if(array[i] > result.mix || result.max === null){
+        result.max = array[i];
+      }
+    }
+
+    console.log(result);
+  
+
+  
+    </script>
+  </body>
+</html>

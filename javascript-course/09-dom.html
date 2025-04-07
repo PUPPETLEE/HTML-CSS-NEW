@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head></head>
+  <body>
+    <button>
+      hello
+    </button>
+    <button class="js-button2">
+      button2
+    </button>
+    
+    <script>
+      console.log(document.querySelector('button').innerHTML);
+      document.querySelector('button').innerHTML = "change";
+
+      <!--
+      This code selects the first HTML element with the class 'js-button2' and changes its inner HTML content to the string "change2". 
+      The new value is also assigned to the variable 'value'.
+      -->
+      const value = document.querySelector('.js-button2').innerHTML = "change2";
+      
+
+    console.log(value.innerHTML ="change3");
+      /*
+      console.log(document.title);
+      document.title = "changed";
+      */
+     /*
+      document.body.innerHTML = "<h1>hello</h1>";
+      console.log(document.body.innerHTML);
+      console.log(typeof document.body);
+      /*
+      document.body.innerHTML ="hello";
+      document.title = "good JOB";
+    */
+
+
+    </script>
+  </body>
+</html>

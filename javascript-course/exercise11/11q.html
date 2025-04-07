@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    
+    <script>
+
+      findIndex(['apple','grape','apple','apple'],'yellow');
+      
+      function findIndex(array,words){
+        let count = 0;
+        for(i=0; i<array.length; i++){
+          if(words === array[i]){
+            count +=1;
+          }
+        }
+        
+        if (count === 0) {
+          count = -1;
+        }
+
+    
+      return console.log(count);
+    }
+
+    
+
+
+  
+
+  
+    </script>
+  </body>
+</html>

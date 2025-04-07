@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>DOM Projects</title>
+
+    <style>
+      .subscribe-button {
+      font-weight: bold;
+      border: none;
+      color: white;
+      background-color: black;
+      padding: 10px 20px;
+      border-radius: 20px;
+      transition: 0.15s;
+      cursor: pointer;
+        
+      }
+      .is-subscribe{
+        color: black;
+        background-color: rgb(240, 240, 240);
+        cursor: pointer;
+
+      }
+
+      .order-amount{
+        padding: 10px;
+        border: solid;
+        border-radius: 2px;
+        border-width: 1px;
+        border-color: rgb(118, 118, 118)
+      }
+
+      .calculate-button{
+        border: none;
+        padding: 11px 10px;
+        background-color: green;
+        color: white;
+        cursor: pointer;
+      }
+      .error{
+        color: red;
+      }
+      
+
+
+    </style>
+  </head>
+   <body> 
+    <p>YouTube Subscribe Button</p>
+    <button class="js-subscribe-button subscribe-button" onclick="subscribe();">Subscribe</button>
+
+    <p>Amazon Shipping Calculator</p>
+    <p>Order under $40 = + $10 shipping.</p>
+    <p>Orders over $40 = FREE shipping</p>
+    
+    <input class="js-order-amount order-amount" placeholder="Enter order amount" onkeydown="handleCostdown(event);">
+    
+    <button class="calculate-button" onclick="calculateTotalShipping(parseInt(document.querySelector('.js-order-amount').value));">Calculate</button>
+    <p class="js-total-amount"></p>
+
+    <script>
+
+       
+      function handleCostdown(event){
+        if (event.key === 'Enter'){
+      calculateTotalShipping(parseInt(document.querySelector('.js-order-amount').value));
+       }
+      }
+
+      function subscribe(){
+
+        let buttonElement = document.querySelector('.js-subscribe-button');
+
+        console.log(buttonElement);
+        //we use innerText to get the text inside the button it doest not include spaces
+        //we use innerHTML to get the text inside the button it includes spaces
+        
+        if(buttonElement.innerText === 'Subscribe'){
+            buttonElement.innerText = 'Subscribed';
+            // adding the 'is-subscribe' class when unsubscribing
+            buttonElement.classList.add('is-subscribe');
+        }
+        else{
+            buttonElement.innerHTML = 'Subscribe';
+            // Remove the 'is-subscribe' class when unsubscribing
+            buttonElement.classList.remove('is-subscribe');
+
+        }
+
+      }
+
+      
+      
+
+      function calculateTotalShipping(orderAmount){
+        // u need to convert the orderamount to int u can use parseint or Number
+        if(orderAmount < 0){
+          document.querySelector('.js-total-amount').classList.add('error');
+          document.querySelector('.js-total-amount').innerHTML = 'Error: cost cannot be less than 0';
+        }else if(orderAmount < 40 ){
+          document.querySelector('.js-total-amount').innerHTML = `$${orderAmount+=10}`;
+          document.querySelector('.js-total-amount').classList.remove('error');
+        }else{
+          document.querySelector('.js-total-amount').innerHTML = `$${orderAmount}`;
+          document.querySelector('.js-total-amount').classList.remove('error');
+
+        }
+
+      }
+      
+    </script>
+   </body>
+
+</html>

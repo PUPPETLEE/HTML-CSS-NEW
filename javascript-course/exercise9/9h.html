@@ -1,0 +1,22 @@
+<!DOCTYPE html> 
+<html>
+  <head>
+
+  </head>
+  <body>
+    <input  type="text" class="js-input" placeholder="Enter a word" onkeyup="handleInput(event);">
+    <p class="js-output">
+
+    </p>
+    <script>
+      
+     function handleInput(event){
+        if(event.key === 'Enter'){
+          document.querySelector('.js-output').innerHTML = document.querySelector('.js-input').value;;
+         
+        }
+     }
+
+    </script>
+  </body>
+</html>

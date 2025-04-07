@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rock Paper Scissor</title>
+   
+    <link rel="stylesheet" href="style/12-rock-paper-scissors.css">
+
+  </head>
+  <body>
+    <p class="title">
+      Rock Paper Scissor 
+    </p>
+    <button class="move-button js-rock-button"
+    >
+    <img class="move-icon" src="img/rock-emoji.png">
+    </button>
+
+    <button class="move-button js-paper-button">
+    <img class="move-icon" src="img/paper-emoji.png" alt="">
+    </button>
+
+    <button class="move-button js-scissors-button">
+      <img class="move-icon" src="img/scissors-emoji.png" alt="">
+
+
+    </button>
+    <p class="js-result result">
+     
+    </p>
+    <p class="js-moves">
+     
+    </p>
+    <p class="js-score score">
+
+    </p>
+    <button class="reset-button" onclick="
+    score.wins = 0, 
+    score.losses= 0, 
+    score.tie = 0;
+    //this basically delete the score object that is why it reset to zero
+    localStorage.removeItem('score');
+    updateScoreElement();
+
+    ">
+      Reset Score
+    </button>
+    <button class="auto-play-button js-auto-play-button">
+      Auto Play
+    </button>
+    <script src="scripts/12-rock-paper-scissors.js"></script>
+
+  
+    
+  </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+  <body>
+    
+    <script>
+  
+  
+ console.log(minMax([3]));
+
+  function minMax(array){
+
+    const result = {
+      min: null, //<!-- null indicates that there is no minimum value set -->
+      max: null  //<!-- null indicates that there is no maximum value set -->
+        };
+      
+
+ 
+    
+    for(let i = 0; i < array.length; i++){
+        const value = array[i];
+      if(value < result.min || result.min === null){
+      result.min = value;
+      }
+      if(value > result.max || result.max === null){
+      result.max = value;
+      }
+      if(result.max === null || value>result.max){
+        result.max = value;
+      }
+
+    }
+
+    return result;
+
+ 
+  }
+
+  
+    </script>
+  </body>
+</html>

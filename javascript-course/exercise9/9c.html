@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Exercise 9c</title>
+  </head>
+  <body>
+    <button class="js-head-btn" onclick="
+    let headsElement = document.querySelector('.js-head-btn').innerText;
+    console.log(headsElement);
+    userPickedside(headsElement);
+    ">
+      heads
+     </button>
+     <button class="js-tail-btn" 
+     onclick="
+     let tailsElement = document.querySelector('.js-tail-btn').innerText;
+
+     userPickedside(tailsElement)">
+      tails
+     </button>
+     <p class="js-chosed-btn"></p>
+    <script>
+
+      
+      function userPickedside(value){
+        console.log(value);
+        document.querySelector('.js-chosed-btn').innerHTML =`You picked ${value}`;
+
+      }
+
+      
+
+    </script>
+  </body>
+</html>

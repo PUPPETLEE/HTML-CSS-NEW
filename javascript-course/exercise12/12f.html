@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <button class="js-add-to-cart">Add to cart</button>
+    <p class="js-message">
+
+    </p>
+  </head>
+  <body>
+    
+    <script>
+      const addButtonElement =  document.querySelector('.js-add-to-cart');
+      let messageElement =  document.querySelector('.js-message');
+      let key;
+
+
+      addButtonElement.addEventListener('click',()=>{
+        addToCart();
+      });
+
+
+
+
+      let buttonclicked = false;
+
+      function addToCart(){
+        if(!buttonclicked){
+          messageElement.innerHTML = 'Added';
+
+        key = setTimeout(()=>{
+          messageElement.innerHTML = '';
+        },2000);
+          buttonclicked = true;
+        }else{
+        clearTimeout(key);
+        buttonclicked = false;
+
+
+        }
+
+      
+    
+    };
+ 
+    
+
+    </script>
+  </body>
+</html>

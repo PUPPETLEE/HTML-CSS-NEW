@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Todo list</title>
+
+    <style>
+      body{
+        font-family: Arial, sans-serif;
+      }
+      .todo-input-grid, .todo-list-grid{
+        display: grid;
+        grid-template-columns: 300px 200px 100px;
+        column-gap: 10px;
+        row-gap: 10px;
+        align-items: center;
+        
+      }
+      .input, .due-date{
+        font-size: 18px;
+        padding: 10px;
+        
+        
+      }
+      .todo-input-grid{
+        margin-bottom: 10px;
+        
+        align-items: stretch;
+
+      }
+      
+      .delete-button, .add-button{ 
+        padding: 15px;
+        background-color: red;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+      .add-button{
+        background-color: green;
+        color: white;
+      }
+
+
+    </style>
+
+  </head>
+  <body>
+    <P>
+      Todo List 
+    </P>
+    <div class="todo-input-grid">
+     
+        <input class="js-input input" placeholder="Enter your todo">
+      
+      
+        <input type="date" class="js-due-date due-date">
+     
+
+<button class="add-button js-class-todo-button">Add</button>
+    </div>
+  
+
+    <div class="js-todo-list todo-list-grid">
+
+    
+
+    </div>
+
+
+    <script>
+      //save the value array
+     /*
+        This script manages and renders a to-do list on a webpage.
+
+        Variables:
+        - todoList: An array containing the list of to-do items.
+
+        Functions:
+        - renderTodolist: This function generates the HTML for the to-do list and updates the webpage.
+          - It initializes an empty string `todolistHTML`.
+          - It iterates over each item in the `todoList` array.
+          - For each item, it creates a paragraph element containing the to-do item.
+          - It appends each paragraph element to the `todolistHTML` string.
+          - Finally, it updates the inner HTML of the element with the class `js-todo-list` to display the to-do list.
+      */
+                        //for testing purposes
+      const todoList = [{
+        name: 'wtf',
+        dueDate: "2020-01-22"
+
+      },
+      {
+      name:"Learn HTML",
+      dueDate: "2020-01-22"
+      }
+    ];
+      
+      renderTodolist();
+
+      function renderTodolist(){
+        todolistHTML=``;
+
+
+        todoList.forEach((todoObject,index)=> {
+          const name = todoObject.name;
+          const dueDate = todoObject.dueDate;
+
+          const html = `
+         
+            <div>  ${name}</div>
+          
+            <div> ${dueDate} </div>
+
+           
+            
+            <button class="delete-button js-delete-button">
+              Delete
+            </button>
+
+         
+          `;
+          todolistHTML += html;
+        })
+
+
+  
+        document.querySelector('.js-todo-list').innerHTML = todolistHTML;
+
+        document.querySelectorAll('.js-delete-button').forEach((deleteButton, index)=>{
+          deleteButton.addEventListener('click',()=>{
+            todoList.splice(index, 1);
+            renderTodolist();
+
+          })
+
+        })
+
+      }
+
+      document.querySelector('.js-class-todo-button').addEventListener('click',() =>{
+        addTodo();
+      });
+     
+
+
+        function addTodo(){
+
+            // save the value in a variable
+            const inputElement =  document.querySelector('.js-input');
+            const dueDateElement = document.querySelector('.js-due-date');
+
+            if(inputElement.value === '' || dueDateElement.value === ''){
+              resetValue();
+              return console.log('Please enter a value');
+            }
+
+
+             //push the value in the array
+            todoList.push({
+              name: inputElement.value,
+              dueDate: dueDateElement.value
+            });
+
+
+            
+
+            console.log(todoList);
+
+            resetValue();
+
+
+            renderTodolist();
+            }
+
+            //jey created this 
+            function resetValue(){
+
+            const inputElement =  document.querySelector('.js-input');
+            const dueDateElement = document.querySelector('.js-due-date');
+
+
+
+              inputElement.value = '';
+              dueDateElement.value = '';
+            }
+
+             /*  old todo function only receive name 
+      function addTodo(){
+
+        // save the value in a variable
+       const inputElement =  document.querySelector('.js-input');
+
+       const name = inputElement.value;
+
+        //push the value in the array
+        todoList.push(name);
+
+        console.log(todoList);
+
+        inputElement.value = '';
+       
+
+        renderTodolist();
+      }
+        */
+                
+    </script>
+    
+
+  </body>
+</html>

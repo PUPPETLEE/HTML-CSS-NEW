@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .gaming-button{
+        border: none;
+        color: white;
+        font-size: 16px;
+        background-color: black;
+        padding: 15px 25px;
+        border-radius: 5px;
+      }
+      .toggle-button{
+        background-color: rgb(235, 227, 227);
+        color: black;
+      }
+    
+    </style>
+
+  </head>
+
+  <body>
+    <button class="gaming-button" onclick="toggled()">
+      Gaming
+    </button>
+    
+    <script>
+
+      function toggled(){
+        // You can probably store this in a variable to make the code much cleaner
+        const button = document.querySelector('.gaming-button');
+        if(button.classList.contains('toggle-button')){
+          button.classList.remove('toggle-button');
+        } else {
+          button.classList.add('toggle-button');
+        }
+      }
+
+    </script>
+  </body>
+</html>

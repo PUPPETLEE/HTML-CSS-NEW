@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title class="js-title">App</title>
+</head>
+<body>
+  <button class="js-add-button" onclick="displayMessage(1)">Add</button>
+  <button class="js-remove-button" onclick="displayMessage(-1)">Remove</button>
+
+  <script>
+    let totalMessages = 0;
+    let intervalId;
+
+    function displayMessage(num) {
+      if (num === -1) {
+        totalMessages--;
+      } else if (num === 1) {
+        totalMessages++;
+      }
+
+      console.log(totalMessages);
+
+      let titleElement = document.querySelector('.js-title');
+      if (totalMessages <= 0) {
+        titleElement.innerHTML = 'App';
+        clearInterval(intervalId);
+      } else {
+        intervalId = setInterval(() => {
+          if (titleElement.innerHTML === 'App') {
+            titleElement.innerHTML = `${totalMessages} messages`;
+          } else {
+            titleElement.innerHTML = 'App';
+          }
+        }, 1000);
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+
+  </head>
+
+  <body>
+    
+    <script>
+      convertLength(50,'miles','km');
+      convertLength(32,'km','miles');
+
+      convertLength(50,'miles','miles');
+      function convertLength(length, from, to){
+        let result = 0;
+        if(!length || !length || !to){
+          console.log('invalid');
+        }else if(from === "miles" && to === 'km'){
+          console.log(result = length  * 1.6 +` ${to}`);
+          
+        }else if(from === "km" && to === 'miles'){
+
+          console.log(result = length  / 1.6+` ${to}`);
+        }else if(from === "km" && to === 'km' || from === "miles" && to === 'miles'){
+          console.log(length +` ${to}`);
+        }
+
+      }
+      
+
+    </script>
+
+  </body>
+  
+</html>

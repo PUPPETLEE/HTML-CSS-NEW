@@ -1,0 +1,55 @@
+<!DOCTYPE html>  
+<html>
+  <head>
+
+  </head>
+  <body>
+    
+    <script>
+
+
+      const product = {
+        name: 'socks',
+        price: 1090
+      };
+      console.log(product);
+      //to replace the value inside of an object
+      product.name = "ball";
+
+      // to delete an valie inside an object
+      //delete products.name;
+
+      product.newProperty = true;
+      console.log(product);
+
+      //other way to acces an object is by using square bracket
+      console.log(product['name']);
+
+      const product2 ={
+        name: 'shirt', 
+        ['delivery-time']: '1 day',
+        //object inside of an object
+          rating: {
+            stars: 4.5,
+            count: 8.7
+          },
+        //function inside of an object
+        fun: function function1(){
+          console.log("function inside of an object");
+        }
+      };
+
+      console.log(product2.name);
+      console.log(product2["delivery-" +"time"]);
+      product2.fun();
+
+      //auto boxing 
+      console.log('hello'.toLocaleUpperCase());
+      console.log('hello'.length);
+
+
+
+
+    </script>
+  </body>
+</html>
