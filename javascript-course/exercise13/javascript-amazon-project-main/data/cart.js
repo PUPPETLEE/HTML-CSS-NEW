@@ -1,0 +1,1 @@
+export const cart = []; // Initialize an empty cart array
